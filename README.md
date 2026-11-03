@@ -1,20 +1,6 @@
 # TP 12 : Service SOAP avec Apache CXF
 
-Un service bancaire SOAP en Java, publié par Apache CXF sur un serveur Jetty embarqué, avec un contrat WSDL généré automatiquement, des objets sérialisés par JAXB et trois niveaux d'accès : un endpoint ouvert, un endpoint protégé par WS-Security en PasswordText et un endpoint protégé en PasswordDigest.
 
-## Le projet en deux mots
-
-L'idée du TP est de suivre le chemin complet d'un service SOAP écrit en code-first : on écrit une interface Java annotée, Apache CXF en déduit un WSDL, on consomme ce WSDL avec un client Java, puis on ajoute une couche de sécurité au niveau du message avec WS-Security et WSS4J.
-
-Tout ce qui apparaît dans les captures ci-dessous provient d'une application réellement compilée avec Maven puis lancée sur le port 9091. Les échanges SOAP sont de vraies requêtes HTTP envoyées au serveur, et les réponses affichées sont celles que le serveur a réellement renvoyées.
-
-## La personnalisation du travail
-
-Pour ne pas ressembler aux autres rendus, le projet ne reprend pas le service de démonstration du sujet. Le groupe Maven est devenu ma.ahmedbenidar.soap et l'artefact banque-soap-cxf. L'espace de noms du contrat est http://soap.ahmedbenidar.ma/banque/ et le service s'appelle BanqueService au lieu du HelloService du sujet.
-
-Le métier a été remplacé par un métier bancaire. Au lieu de deux opérations qui renvoient une chaîne et une personne, le service expose quatre opérations métier : une salutation, la consultation d'un compte, la liste des comptes d'une agence et l'exécution d'un virement. Deux types JAXB décrivent les données : le compte, avec son numéro, son titulaire, son agence, sa ville, sa devise, son solde et son état, et le résultat de virement, qui regroupe la référence, le statut, le message et les soldes après opération.
-
-Le serveur publie trois endpoints sur le port 9091 plutôt qu'un seul sur le port 8080 : un endpoint ouvert, un endpoint protégé en PasswordText et un endpoint protégé en PasswordDigest. Le port 9091 a été choisi pour ne pas entrer en conflit avec les autres TP de la série. Les utilisateurs de démonstration et les agences sont marocains, et le jeu de données contient cinq comptes répartis entre Casablanca, Rabat et Marrakech.
 
 ## Création du projet et dépendances
 
@@ -138,24 +124,5 @@ Un second client a été écrit pour les endpoints protégés. Il ajoute un inte
 
 ![Client Java sur les endpoints securises](docs/captures/client-securise.png)
 
-## La place d'UDDI
 
-Le sujet consacre une étape au registre UDDI. UDDI était l'annuaire historique de la SOA, où l'on publiait un service puis où les clients venaient le trouver avant de s'y lier. Il n'est plus utilisé dans les architectures actuelles, où la découverte se fait plutôt par la plateforme, par un annuaire de services interne ou simplement par une URL de WSDL connue. Le WSDL reste en revanche central, puisque c'est lui qui porte tout le contrat.
 
-## Les points à retenir
-
-Le WSDL généré par CXF déclare elementFormDefault à unqualified. Concrètement, les éléments internes du corps SOAP doivent être envoyés sans préfixe d'espace de noms alors que l'élément qui enveloppe l'opération doit être qualifié. Envoyer un préfixe partout provoque une erreur de démarshalling.
-
-Il ne faut pas envoyer d'en-tête SOAPAction vide. Un en-tête présent mais vide fait échouer l'intercepteur de CXF avec une exception d'index hors limites, ce qui produit une erreur 500 difficile à interpréter. Il vaut mieux omettre complètement l'en-tête.
-
-Le PasswordDigest n'est pas un chiffrement mais une preuve de connaissance du mot de passe, et il ne protège pas contre le rejeu si l'horodatage n'est pas contrôlé. C'est pour cela que le sujet recommande aussi HTTPS et la signature des messages pour des échanges sensibles.
-
-## Lancer le projet
-
-Le projet se compile avec Maven et se lance avec Java. La classe principale du serveur est ServeurBanque, celle du client ouvert est ClientJava et celle du client sécurisé est ClientSecurise.
-
-Une fois le serveur lancé, les trois WSDL sont accessibles respectivement sur les chemins banque, banque-secure et banque-digest sous l'adresse du serveur. Le script de capture placé dans docs/tools rejoue l'ensemble des appels et réécrit les journaux du dossier docs/logs, ce qui permet de régénérer toutes les images de ce document.
-
-## Conclusion
-
-Ce TP montre qu'un service SOAP tient en très peu de code métier, parce que l'essentiel du travail est pris en charge par la pile CXF : publication, génération du contrat, sérialisation et sécurité sont des intercepteurs et des annotations. La contrepartie est une configuration précise, où un préfixe d'espace de noms ou un en-tête mal formé suffit à faire échouer un appel. Les captures de ce document viennent toutes d'un service réellement lancé sur le port 9091.
