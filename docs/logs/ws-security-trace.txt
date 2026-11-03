@@ -1,0 +1,44 @@
+### Trace serveur CXF : validation WS-Security UsernameToken (PasswordText et PasswordDigest)
+
+Extrait filtre du journal reel du serveur (docs/logs/demarrage-serveur.txt).
+On y voit la publication des trois endpoints, puis la validation des jetons
+cote serveur par WSS4J, avec les refus attendus (mot de passe errone ou digest incorrect).
+
+[main] INFO org.apache.cxf.endpoint.ServerImpl - Setting the server's publish address to be http://localhost:9091/services/banque
+[main] INFO org.apache.cxf.endpoint.ServerImpl - Setting the server's publish address to be http://localhost:9091/services/banque-secure
+WS-Security UsernameToken (PasswordText) active sur http://localhost:9091/services/banque-secure
+[main] INFO org.apache.cxf.endpoint.ServerImpl - Setting the server's publish address to be http://localhost:9091/services/banque-digest
+WS-Security UsernameToken (PasswordDigest) active sur http://localhost:9091/services/banque-digest
+ Service SOAP bancaire demarre sur le port 9091
+ Endpoint ouvert          : http://localhost:9091/services/banque
+ Endpoint PasswordText    : http://localhost:9091/services/banque-secure
+ Endpoint PasswordDigest  : http://localhost:9091/services/banque-digest
+[qtp1099552523-31] INFO org.ehcache.core.EhcacheManager - Cache 'ws-security.nonce.cache.instance-1989956441' created in EhcacheManager.
+[qtp1099552523-31] WARN org.apache.cxf.ws.security.wss4j.WSS4JInInterceptor - Security processing failed (actions mismatch)
+org.apache.cxf.binding.soap.SoapFault: A security error was encountered when verifying the message
+	at org.apache.cxf.ws.security.wss4j.WSS4JUtils.createSoapFault(WSS4JUtils.java:243)
+	at org.apache.cxf.ws.security.wss4j.WSS4JInInterceptor.handleMessageInternal(WSS4JInInterceptor.java:382)
+	at org.apache.cxf.ws.security.wss4j.WSS4JInInterceptor.handleMessage(WSS4JInInterceptor.java:213)
+	at org.apache.cxf.ws.security.wss4j.WSS4JInInterceptor.handleMessage(WSS4JInInterceptor.java:93)
+Caused by: org.apache.wss4j.common.ext.WSSecurityException: An error was discovered processing the <wsse:Security> header
+	at org.apache.cxf.ws.security.wss4j.WSS4JInInterceptor.checkActions(WSS4JInInterceptor.java:465)
+	at org.apache.cxf.ws.security.wss4j.WSS4JInInterceptor.handleMessageInternal(WSS4JInInterceptor.java:364)
+[WS-SECURITY] Identifiant valide : ahmed (validation n 1)
+[WS-SECURITY] Identifiant valide : ahmed (validation n 2)
+Caused by: org.apache.wss4j.common.ext.WSSecurityException: The security token could not be authenticated or authorized
+	at org.apache.wss4j.dom.validate.UsernameTokenValidator.verifyDigestPassword(UsernameTokenValidator.java:188)
+	at org.apache.cxf.ws.security.wss4j.WSS4JInInterceptor.handleMessageInternal(WSS4JInInterceptor.java:326)
+[qtp1099552523-37] INFO org.ehcache.core.EhcacheManager - Cache 'ws-security.nonce.cache.instance-1989956441' created in EhcacheManager.
+[WS-SECURITY] Identifiant valide : salma (validation n 1)
+[qtp1099552523-30] WARN org.apache.cxf.ws.security.wss4j.WSS4JInInterceptor - Security processing failed (actions mismatch)
+[WS-SECURITY] Identifiant valide : ahmed (validation n 3)
+[WS-SECURITY] Identifiant valide : ahmed (validation n 4)
+[WS-SECURITY] Identifiant valide : salma (validation n 2)
+[WS-SECURITY] Identifiant valide : salma (validation n 3)
+	at org.apache.wss4j.dom.validate.UsernameTokenValidator.verifyDigestPassword(UsernameTokenValidator.java:182)
+[WS-SECURITY] Identifiant valide : ahmed (validation n 5)
+[WS-SECURITY] Identifiant valide : ahmed (validation n 6)
+[WS-SECURITY] Identifiant valide : ahmed (validation n 7)
+[WS-SECURITY] Identifiant valide : salma (validation n 4)
+[WS-SECURITY] Identifiant valide : salma (validation n 5)
+	at org.apache.wss4j.dom.validate.UsernameTokenValidator.verifyDigestPassword(UsernameTokenValidator.java:168)

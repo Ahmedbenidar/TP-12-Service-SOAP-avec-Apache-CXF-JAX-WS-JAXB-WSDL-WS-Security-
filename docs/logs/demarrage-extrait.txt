@@ -1,0 +1,16 @@
+[main] INFO org.apache.cxf.endpoint.ServerImpl - Setting the server's publish address to be http://localhost:9091/services/banque
+[main] INFO org.eclipse.jetty.server.handler.ContextHandler - Started o.a.c.t.h.JettyContextHandler@4f8969b0{/services,null,AVAILABLE}
+[main] INFO org.apache.cxf.endpoint.ServerImpl - Setting the server's publish address to be http://localhost:9091/services/banque-secure
+[main] INFO org.eclipse.jetty.server.handler.ContextHandler - Started o.a.c.t.h.JettyContextHandler@517bd097{/services,null,AVAILABLE}
+WS-Security UsernameToken (PasswordText) active sur http://localhost:9091/services/banque-secure
+[main] INFO org.apache.cxf.endpoint.ServerImpl - Setting the server's publish address to be http://localhost:9091/services/banque-digest
+[main] INFO org.eclipse.jetty.server.handler.ContextHandler - Started o.a.c.t.h.JettyContextHandler@2a7b6f69{/services,null,AVAILABLE}
+WS-Security UsernameToken (PasswordDigest) active sur http://localhost:9091/services/banque-digest
+ Service SOAP bancaire demarre sur le port 9091
+ Endpoint ouvert          : http://localhost:9091/services/banque
+ WSDL ouvert              : http://localhost:9091/services/banque?wsdl
+ Endpoint PasswordText    : http://localhost:9091/services/banque-secure
+ WSDL PasswordText        : http://localhost:9091/services/banque-secure?wsdl
+ Endpoint PasswordDigest  : http://localhost:9091/services/banque-digest
+ WSDL PasswordDigest      : http://localhost:9091/services/banque-digest?wsdl
+ Utilisateurs WS-Security : [salma, ahmed]

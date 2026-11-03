@@ -1,0 +1,12 @@
+mvn clean package  ->  BUILD SUCCESS
+
+[INFO] Building banque-soap-cxf 1.0.0
+[INFO] Compiling 9 source files with javac [debug release 17] to target\classes
+[INFO] Building jar: C:\Users\dell\Desktop\tp12_soap_cxf\target\banque-soap-cxf-1.0.0.jar
+[INFO] BUILD SUCCESS
+[INFO] Total time:  35.737 s
+[INFO] Finished at: 2026-11-03T21:04:43Z
+
+Artefacts produits :
+  target\banque-soap-cxf-1.0.0.jar
+  target\lib\ -> 73 jars de dependances copiees

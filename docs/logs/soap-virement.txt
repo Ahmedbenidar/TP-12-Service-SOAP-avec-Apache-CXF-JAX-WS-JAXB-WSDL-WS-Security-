@@ -1,0 +1,26 @@
+﻿### Operation EffectuerVirement
+POST http://localhost:9091/services/banque
+Content-Type: text/xml; charset=UTF-8
+
+----- REQUETE SOAP ENVOYEE -----
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:ban="http://soap.ahmedbenidar.ma/banque/">
+  <soapenv:Header/>
+  <soapenv:Body>
+    <ban:EffectuerVirement>
+      <compteDebit>MA-1005</compteDebit>
+      <compteCredit>MA-1004</compteCredit>
+      <montant>2500.0</montant>
+    </ban:EffectuerVirement>
+  </soapenv:Body>
+</soapenv:Envelope>
+
+----- REPONSE HTTP + SOAP -----
+HTTP/1.1 200 OK
+Date: Tue, 03 Nov 2026 21:05:47 GMT
+Content-Type: text/xml;charset=utf-8
+Content-Length: 478
+Server: Jetty(11.0.25)
+
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><soap:Body><ns2:EffectuerVirementResponse xmlns:ns2="http://soap.ahmedbenidar.ma/banque/"><resultat><reference>VIR-CB7FC850</reference><statut>EXECUTE</statut><message>Virement execute avec succes</message><montantDebite>2500.0</montantDebite><nouveauSoldeDebit>47300.0</nouveauSoldeDebit><nouveauSoldeCredit>5980.25</nouveauSoldeCredit></resultat></ns2:EffectuerVirementResponse></soap:Body></soap:Envelope>

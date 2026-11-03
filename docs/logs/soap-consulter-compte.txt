@@ -1,0 +1,24 @@
+﻿### Operation ConsulterCompte
+POST http://localhost:9091/services/banque
+Content-Type: text/xml; charset=UTF-8
+
+----- REQUETE SOAP ENVOYEE -----
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:ban="http://soap.ahmedbenidar.ma/banque/">
+  <soapenv:Header/>
+  <soapenv:Body>
+    <ban:ConsulterCompte>
+      <numeroCompte>MA-1003</numeroCompte>
+    </ban:ConsulterCompte>
+  </soapenv:Body>
+</soapenv:Envelope>
+
+----- REPONSE HTTP + SOAP -----
+HTTP/1.1 200 OK
+Date: Tue, 03 Nov 2026 21:05:47 GMT
+Content-Type: text/xml;charset=utf-8
+Content-Length: 424
+Server: Jetty(11.0.25)
+
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><soap:Body><ns2:ConsulterCompteResponse xmlns:ns2="http://soap.ahmedbenidar.ma/banque/"><compte><numeroCompte>MA-1003</numeroCompte><titulaire>Hicham Ouazzani</titulaire><agence>Agence Rabat Agdal</agence><ville>Rabat</ville><devise>MAD</devise><solde>221150.4</solde><actif>true</actif></compte></ns2:ConsulterCompteResponse></soap:Body></soap:Envelope>

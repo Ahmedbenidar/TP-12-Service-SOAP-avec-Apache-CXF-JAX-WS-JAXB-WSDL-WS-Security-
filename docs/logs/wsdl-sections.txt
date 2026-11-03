@@ -1,0 +1,42 @@
+### Analyse du WSDL genere par Apache CXF
+
+Fichier analyse : docs/logs/wsdl-ouvert.txt
+Recupere par HTTP sur http://localhost:9091/services/banque?wsdl
+
+Cible du service (soap:address)             : http://localhost:9091/services/banque
+Style de binding                            : document
+Transport                                   : http://schemas.xmlsoap.org/soap/http
+PortType (interface metier)                 : BanqueService
+Binding                                     : BanqueServiceSoapBinding
+Service                                     : BanqueService
+Target namespace                            : http://soap.ahmedbenidar.ma/banque/
+elementFormDefault                          : unqualified
+
+Nombre de blocs wsdl:types                  : 1
+Nombre de wsdl:message                      : 8
+Nombre de wsdl:portType                     : 1
+Nombre de wsdl:binding                      : 1
+Nombre de wsdl:service                      : 1
+Nombre de complexes types XSD               : 10
+
+Operations exposees dans le portType BanqueService :
+   - Saluer(nomClient)
+   - ConsulterCompte(numeroCompte)
+   - ListerComptesAgence(agence)
+   - EffectuerVirement(compteDebit, compteCredit, montant)
+
+Types complexes generes par JAXB :
+   - EffectuerVirement
+   - EffectuerVirementResponse
+   - ResultatVirementType
+   - ListerComptesAgence
+   - ListerComptesAgenceResponse
+   - CompteType
+   - ConsulterCompte
+   - ConsulterCompteResponse
+   - Saluer
+   - SaluerResponse
+
+Conclusion : un seul portType, un seul binding SOAP 1.1 en style document,
+quatre operations metier et des types JAXB dedies. Le contrat est donc
+entierement decrit par le WSDL et donc consommable par nimporte quel client.

@@ -1,0 +1,109 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------< ma.ahmedbenidar.soap:banque-soap-cxf >----------------
+[INFO] Building banque-soap-cxf 1.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.2.0:clean (default-clean) @ banque-soap-cxf ---
+[INFO] Deleting C:\Users\dell\Desktop\tp12_soap_cxf\target
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ banque-soap-cxf ---
+[INFO] skip non existing resourceDirectory C:\Users\dell\Desktop\tp12_soap_cxf\src\main\resources
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ banque-soap-cxf ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 9 source files with javac [debug release 17] to target\classes
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ banque-soap-cxf ---
+[INFO] skip non existing resourceDirectory C:\Users\dell\Desktop\tp12_soap_cxf\src\test\resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ banque-soap-cxf ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ banque-soap-cxf ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] --- jar:3.4.1:jar (default-jar) @ banque-soap-cxf ---
+[INFO] Building jar: C:\Users\dell\Desktop\tp12_soap_cxf\target\banque-soap-cxf-1.0.0.jar
+[INFO] 
+[INFO] --- dependency:3.6.1:copy-dependencies (copier-dependances) @ banque-soap-cxf ---
+[INFO] Copying cxf-rt-frontend-jaxws-4.0.9.jar to C:\Users\dell\Desktop\tp12_soap_cxf\target\lib\cxf-rt-frontend-jaxws-4.0.9.jar
+[INFO] Copying xml-resolver-1.2.jar to C:\Users\dell\Desktop\tp12_soap_cxf\target\lib\xml-resolver-1.2.jar
+[INFO] Copying asm-9.8.jar to C:\Users\dell\Desktop\tp12_soap_cxf\target\lib\asm-9.8.jar
+[INFO] Copying cxf-core-4.0.9.jar to C:\Users\dell\Desktop\tp12_soap_cxf\target\lib\cxf-core-4.0.9.jar
+[INFO] Copying jakarta.annotation-api-2.1.1.jar to C:\Users\dell\Desktop\tp12_soap_cxf\target\lib\jakarta.annotation-api-2.1.1.jar
+[INFO] Copying woodstox-core-6.6.2.jar to C:\Users\dell\Desktop\tp12_soap_cxf\target\lib\woodstox-core-6.6.2.jar
+[INFO] Copying stax2-api-4.2.2.jar to C:\Users\dell\Desktop\tp12_soap_cxf\target\lib\stax2-api-4.2.2.jar
+[INFO] Copying xmlschema-core-2.3.1.jar to C:\Users\dell\Desktop\tp12_soap_cxf\target\lib\xmlschema-core-2.3.1.jar
+[INFO] Copying cxf-rt-bindings-soap-4.0.9.jar to C:\Users\dell\Desktop\tp12_soap_cxf\target\lib\cxf-rt-bindings-soap-4.0.9.jar
+[INFO] Copying jakarta.xml.soap-api-2.0.1.jar to C:\Users\dell\Desktop\tp12_soap_cxf\target\lib\jakarta.xml.soap-api-2.0.1.jar
+[INFO] Copying jakarta.jws-api-3.0.0.jar to C:\Users\dell\Desktop\tp12_soap_cxf\target\lib\jakarta.jws-api-3.0.0.jar
+[INFO] Copying jakarta.xml.ws-api-3.0.1.jar to C:\Users\dell\Desktop\tp12_soap_cxf\target\lib\jakarta.xml.ws-api-3.0.1.jar
+[INFO] Copying cxf-rt-wsdl-4.0.9.jar to C:\Users\dell\Desktop\tp12_soap_cxf\target\lib\cxf-rt-wsdl-4.0.9.jar
+[INFO] Copying wsdl4j-1.6.3.jar to C:\Users\dell\Desktop\tp12_soap_cxf\target\lib\wsdl4j-1.6.3.jar
+[INFO] Copying cxf-rt-databinding-jaxb-4.0.9.jar to C:\Users\dell\Desktop\tp12_soap_cxf\target\lib\cxf-rt-databinding-jaxb-4.0.9.jar
+[INFO] Copying cxf-rt-bindings-xml-4.0.9.jar to C:\Users\dell\Desktop\tp12_soap_cxf\target\lib\cxf-rt-bindings-xml-4.0.9.jar
+[INFO] Copying cxf-rt-frontend-simple-4.0.9.jar to C:\Users\dell\Desktop\tp12_soap_cxf\target\lib\cxf-rt-frontend-simple-4.0.9.jar
+[INFO] Copying angus-mail-1.0.0.jar to C:\Users\dell\Desktop\tp12_soap_cxf\target\lib\angus-mail-1.0.0.jar
+[INFO] Copying jakarta.mail-api-2.1.0.jar to C:\Users\dell\Desktop\tp12_soap_cxf\target\lib\jakarta.mail-api-2.1.0.jar
+[INFO] Copying cxf-rt-ws-addr-4.0.9.jar to C:\Users\dell\Desktop\tp12_soap_cxf\target\lib\cxf-rt-ws-addr-4.0.9.jar
+[INFO] Copying cxf-rt-ws-policy-4.0.9.jar to C:\Users\dell\Desktop\tp12_soap_cxf\target\lib\cxf-rt-ws-policy-4.0.9.jar
+[INFO] Copying angus-activation-2.0.2.jar to C:\Users\dell\Desktop\tp12_soap_cxf\target\lib\angus-activation-2.0.2.jar
+[INFO] Copying cxf-rt-transports-http-4.0.9.jar to C:\Users\dell\Desktop\tp12_soap_cxf\target\lib\cxf-rt-transports-http-4.0.9.jar
+[INFO] Copying cxf-rt-transports-http-jetty-4.0.9.jar to C:\Users\dell\Desktop\tp12_soap_cxf\target\lib\cxf-rt-transports-http-jetty-4.0.9.jar
+[INFO] Copying jetty-server-11.0.25.jar to C:\Users\dell\Desktop\tp12_soap_cxf\target\lib\jetty-server-11.0.25.jar
+[INFO] Copying jetty-jakarta-servlet-api-5.0.2.jar to C:\Users\dell\Desktop\tp12_soap_cxf\target\lib\jetty-jakarta-servlet-api-5.0.2.jar
+[INFO] Copying jetty-util-11.0.25.jar to C:\Users\dell\Desktop\tp12_soap_cxf\target\lib\jetty-util-11.0.25.jar
+[INFO] Copying jetty-io-11.0.25.jar to C:\Users\dell\Desktop\tp12_soap_cxf\target\lib\jetty-io-11.0.25.jar
+[INFO] Copying jetty-security-11.0.25.jar to C:\Users\dell\Desktop\tp12_soap_cxf\target\lib\jetty-security-11.0.25.jar
+[INFO] Copying jetty-http-11.0.25.jar to C:\Users\dell\Desktop\tp12_soap_cxf\target\lib\jetty-http-11.0.25.jar
+[INFO] Copying slf4j-api-2.0.17.jar to C:\Users\dell\Desktop\tp12_soap_cxf\target\lib\slf4j-api-2.0.17.jar
+[INFO] Copying cxf-rt-ws-security-4.0.9.jar to C:\Users\dell\Desktop\tp12_soap_cxf\target\lib\cxf-rt-ws-security-4.0.9.jar
+[INFO] Copying cxf-rt-security-saml-4.0.9.jar to C:\Users\dell\Desktop\tp12_soap_cxf\target\lib\cxf-rt-security-saml-4.0.9.jar
+[INFO] Copying cxf-rt-security-4.0.9.jar to C:\Users\dell\Desktop\tp12_soap_cxf\target\lib\cxf-rt-security-4.0.9.jar
+[INFO] Copying ehcache-3.10.8-jakarta.jar to C:\Users\dell\Desktop\tp12_soap_cxf\target\lib\ehcache-3.10.8-jakarta.jar
+[INFO] Copying cache-api-1.1.0.jar to C:\Users\dell\Desktop\tp12_soap_cxf\target\lib\cache-api-1.1.0.jar
+[INFO] Copying wss4j-ws-security-dom-3.0.4.jar to C:\Users\dell\Desktop\tp12_soap_cxf\target\lib\wss4j-ws-security-dom-3.0.4.jar
+[INFO] Copying wss4j-ws-security-common-3.0.4.jar to C:\Users\dell\Desktop\tp12_soap_cxf\target\lib\wss4j-ws-security-common-3.0.4.jar
+[INFO] Copying xmlsec-3.0.5.jar to C:\Users\dell\Desktop\tp12_soap_cxf\target\lib\xmlsec-3.0.5.jar
+[INFO] Copying commons-codec-1.17.1.jar to C:\Users\dell\Desktop\tp12_soap_cxf\target\lib\commons-codec-1.17.1.jar
+[INFO] Copying opensaml-saml-impl-4.3.2.jar to C:\Users\dell\Desktop\tp12_soap_cxf\target\lib\opensaml-saml-impl-4.3.2.jar
+[INFO] Copying opensaml-core-4.3.2.jar to C:\Users\dell\Desktop\tp12_soap_cxf\target\lib\opensaml-core-4.3.2.jar
+[INFO] Copying opensaml-profile-api-4.3.2.jar to C:\Users\dell\Desktop\tp12_soap_cxf\target\lib\opensaml-profile-api-4.3.2.jar
+[INFO] Copying opensaml-saml-api-4.3.2.jar to C:\Users\dell\Desktop\tp12_soap_cxf\target\lib\opensaml-saml-api-4.3.2.jar
+[INFO] Copying opensaml-security-api-4.3.2.jar to C:\Users\dell\Desktop\tp12_soap_cxf\target\lib\opensaml-security-api-4.3.2.jar
+[INFO] Copying opensaml-security-impl-4.3.2.jar to C:\Users\dell\Desktop\tp12_soap_cxf\target\lib\opensaml-security-impl-4.3.2.jar
+[INFO] Copying opensaml-soap-api-4.3.2.jar to C:\Users\dell\Desktop\tp12_soap_cxf\target\lib\opensaml-soap-api-4.3.2.jar
+[INFO] Copying opensaml-xmlsec-api-4.3.2.jar to C:\Users\dell\Desktop\tp12_soap_cxf\target\lib\opensaml-xmlsec-api-4.3.2.jar
+[INFO] Copying opensaml-xmlsec-impl-4.3.2.jar to C:\Users\dell\Desktop\tp12_soap_cxf\target\lib\opensaml-xmlsec-impl-4.3.2.jar
+[INFO] Copying metrics-core-4.2.25.jar to C:\Users\dell\Desktop\tp12_soap_cxf\target\lib\metrics-core-4.2.25.jar
+[INFO] Copying java-support-8.4.2.jar to C:\Users\dell\Desktop\tp12_soap_cxf\target\lib\java-support-8.4.2.jar
+[INFO] Copying cryptacular-1.2.7.jar to C:\Users\dell\Desktop\tp12_soap_cxf\target\lib\cryptacular-1.2.7.jar
+[INFO] Copying guava-33.3.1-jre.jar to C:\Users\dell\Desktop\tp12_soap_cxf\target\lib\guava-33.3.1-jre.jar
+[INFO] Copying failureaccess-1.0.2.jar to C:\Users\dell\Desktop\tp12_soap_cxf\target\lib\failureaccess-1.0.2.jar
+[INFO] Copying opensaml-xacml-impl-4.3.2.jar to C:\Users\dell\Desktop\tp12_soap_cxf\target\lib\opensaml-xacml-impl-4.3.2.jar
+[INFO] Copying opensaml-xacml-api-4.3.2.jar to C:\Users\dell\Desktop\tp12_soap_cxf\target\lib\opensaml-xacml-api-4.3.2.jar
+[INFO] Copying opensaml-xacml-saml-impl-4.3.2.jar to C:\Users\dell\Desktop\tp12_soap_cxf\target\lib\opensaml-xacml-saml-impl-4.3.2.jar
+[INFO] Copying opensaml-xacml-saml-api-4.3.2.jar to C:\Users\dell\Desktop\tp12_soap_cxf\target\lib\opensaml-xacml-saml-api-4.3.2.jar
+[INFO] Copying jasypt-1.9.3.jar to C:\Users\dell\Desktop\tp12_soap_cxf\target\lib\jasypt-1.9.3.jar
+[INFO] Copying wss4j-policy-3.0.4.jar to C:\Users\dell\Desktop\tp12_soap_cxf\target\lib\wss4j-policy-3.0.4.jar
+[INFO] Copying neethi-3.2.1.jar to C:\Users\dell\Desktop\tp12_soap_cxf\target\lib\neethi-3.2.1.jar
+[INFO] Copying wss4j-ws-security-stax-3.0.4.jar to C:\Users\dell\Desktop\tp12_soap_cxf\target\lib\wss4j-ws-security-stax-3.0.4.jar
+[INFO] Copying wss4j-bindings-3.0.4.jar to C:\Users\dell\Desktop\tp12_soap_cxf\target\lib\wss4j-bindings-3.0.4.jar
+[INFO] Copying saaj-impl-2.0.1.jar to C:\Users\dell\Desktop\tp12_soap_cxf\target\lib\saaj-impl-2.0.1.jar
+[INFO] Copying stax-ex-2.0.1.jar to C:\Users\dell\Desktop\tp12_soap_cxf\target\lib\stax-ex-2.0.1.jar
+[INFO] Copying wss4j-ws-security-policy-stax-3.0.4.jar to C:\Users\dell\Desktop\tp12_soap_cxf\target\lib\wss4j-ws-security-policy-stax-3.0.4.jar
+[INFO] Copying jakarta.xml.bind-api-4.0.2.jar to C:\Users\dell\Desktop\tp12_soap_cxf\target\lib\jakarta.xml.bind-api-4.0.2.jar
+[INFO] Copying jakarta.activation-api-2.1.3.jar to C:\Users\dell\Desktop\tp12_soap_cxf\target\lib\jakarta.activation-api-2.1.3.jar
+[INFO] Copying jaxb-runtime-4.0.5.jar to C:\Users\dell\Desktop\tp12_soap_cxf\target\lib\jaxb-runtime-4.0.5.jar
+[INFO] Copying jaxb-core-4.0.5.jar to C:\Users\dell\Desktop\tp12_soap_cxf\target\lib\jaxb-core-4.0.5.jar
+[INFO] Copying txw2-4.0.5.jar to C:\Users\dell\Desktop\tp12_soap_cxf\target\lib\txw2-4.0.5.jar
+[INFO] Copying istack-commons-runtime-4.1.2.jar to C:\Users\dell\Desktop\tp12_soap_cxf\target\lib\istack-commons-runtime-4.1.2.jar
+[INFO] Copying slf4j-simple-2.0.13.jar to C:\Users\dell\Desktop\tp12_soap_cxf\target\lib\slf4j-simple-2.0.13.jar
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  35.737 s
+[INFO] Finished at: 2026-11-03T21:04:43Z
+[INFO] ------------------------------------------------------------------------

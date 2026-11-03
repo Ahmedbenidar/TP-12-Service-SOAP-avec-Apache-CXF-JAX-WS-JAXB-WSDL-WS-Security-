@@ -1,0 +1,32 @@
+﻿### Endpoint securise AVEC UsernameToken valide (ahmed)
+POST http://localhost:9091/services/banque-secure
+Content-Type: text/xml; charset=UTF-8
+
+----- REQUETE SOAP ENVOYEE -----
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:ban="http://soap.ahmedbenidar.ma/banque/">
+  <soapenv:Header>
+  <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"
+                 xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+    <wsse:UsernameToken wsu:Id="UT-1">
+      <wsse:Username>ahmed</wsse:Username>
+      <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">Banque@2026</wsse:Password>
+    </wsse:UsernameToken>
+  </wsse:Security>
+</soapenv:Header>
+  <soapenv:Body>
+    <ban:Saluer>
+      <nomClient>Salma</nomClient>
+    </ban:Saluer>
+  </soapenv:Body>
+</soapenv:Envelope>
+
+----- REPONSE HTTP + SOAP -----
+HTTP/1.1 200 OK
+Date: Tue, 03 Nov 2026 21:05:48 GMT
+Content-Type: text/xml;charset=utf-8
+Content-Length: 300
+Server: Jetty(11.0.25)
+
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><soap:Body><ns2:SaluerResponse xmlns:ns2="http://soap.ahmedbenidar.ma/banque/"><messageAccueil>Bonjour Salma, bienvenue au service SOAP de la banque Ahmed Ben Idar.</messageAccueil></ns2:SaluerResponse></soap:Body></soap:Envelope>

@@ -1,0 +1,211 @@
+﻿### WSDL de l'endpoint securise
+GET http://localhost:9091/services/banque-secure?wsdl
+
+HTTP/1.1 200 OK
+Date: Tue, 03 Nov 2026 21:05:45 GMT
+Content-Type: text/xml;charset=utf-8
+Content-Length: 7958
+Server: Jetty(11.0.25)
+
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://soap.ahmedbenidar.ma/banque/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="BanqueService" targetNamespace="http://soap.ahmedbenidar.ma/banque/">
+  <wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://soap.ahmedbenidar.ma/banque/" elementFormDefault="unqualified" targetNamespace="http://soap.ahmedbenidar.ma/banque/" version="1.0">
+
+  <xs:element name="Compte" type="tns:CompteType"/>
+
+  <xs:element name="ConsulterCompte" type="tns:ConsulterCompte"/>
+
+  <xs:element name="ConsulterCompteResponse" type="tns:ConsulterCompteResponse"/>
+
+  <xs:element name="EffectuerVirement" type="tns:EffectuerVirement"/>
+
+  <xs:element name="EffectuerVirementResponse" type="tns:EffectuerVirementResponse"/>
+
+  <xs:element name="ListerComptesAgence" type="tns:ListerComptesAgence"/>
+
+  <xs:element name="ListerComptesAgenceResponse" type="tns:ListerComptesAgenceResponse"/>
+
+  <xs:element name="ResultatVirement" type="tns:ResultatVirementType"/>
+
+  <xs:element name="Saluer" type="tns:Saluer"/>
+
+  <xs:element name="SaluerResponse" type="tns:SaluerResponse"/>
+
+  <xs:complexType name="EffectuerVirement">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="compteDebit" type="xs:string"/>
+      <xs:element minOccurs="0" name="compteCredit" type="xs:string"/>
+      <xs:element minOccurs="0" name="montant" type="xs:double"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="EffectuerVirementResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="resultat" type="tns:ResultatVirementType"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ResultatVirementType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="reference" type="xs:string"/>
+      <xs:element minOccurs="0" name="statut" type="xs:string"/>
+      <xs:element minOccurs="0" name="message" type="xs:string"/>
+      <xs:element minOccurs="0" name="montantDebite" type="xs:double"/>
+      <xs:element minOccurs="0" name="nouveauSoldeDebit" type="xs:double"/>
+      <xs:element minOccurs="0" name="nouveauSoldeCredit" type="xs:double"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ListerComptesAgence">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="agence" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ListerComptesAgenceResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="comptes" type="tns:CompteType"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="CompteType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="numeroCompte" type="xs:string"/>
+      <xs:element minOccurs="0" name="titulaire" type="xs:string"/>
+      <xs:element minOccurs="0" name="agence" type="xs:string"/>
+      <xs:element minOccurs="0" name="ville" type="xs:string"/>
+      <xs:element minOccurs="0" name="devise" type="xs:string"/>
+      <xs:element minOccurs="0" name="solde" type="xs:double"/>
+      <xs:element minOccurs="0" name="actif" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ConsulterCompte">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="numeroCompte" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ConsulterCompteResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="compte" type="tns:CompteType"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Saluer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="nomClient" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="SaluerResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="messageAccueil" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="EffectuerVirement">
+    <wsdl:part element="tns:EffectuerVirement" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ConsulterCompteResponse">
+    <wsdl:part element="tns:ConsulterCompteResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ListerComptesAgenceResponse">
+    <wsdl:part element="tns:ListerComptesAgenceResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="EffectuerVirementResponse">
+    <wsdl:part element="tns:EffectuerVirementResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ListerComptesAgence">
+    <wsdl:part element="tns:ListerComptesAgence" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="SaluerResponse">
+    <wsdl:part element="tns:SaluerResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ConsulterCompte">
+    <wsdl:part element="tns:ConsulterCompte" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="Saluer">
+    <wsdl:part element="tns:Saluer" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="BanqueService">
+    <wsdl:operation name="EffectuerVirement">
+      <wsdl:input message="tns:EffectuerVirement" name="EffectuerVirement">
+    </wsdl:input>
+      <wsdl:output message="tns:EffectuerVirementResponse" name="EffectuerVirementResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListerComptesAgence">
+      <wsdl:input message="tns:ListerComptesAgence" name="ListerComptesAgence">
+    </wsdl:input>
+      <wsdl:output message="tns:ListerComptesAgenceResponse" name="ListerComptesAgenceResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsulterCompte">
+      <wsdl:input message="tns:ConsulterCompte" name="ConsulterCompte">
+    </wsdl:input>
+      <wsdl:output message="tns:ConsulterCompteResponse" name="ConsulterCompteResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Saluer">
+      <wsdl:input message="tns:Saluer" name="Saluer">
+    </wsdl:input>
+      <wsdl:output message="tns:SaluerResponse" name="SaluerResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BanqueServiceSoapBinding" type="tns:BanqueService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="EffectuerVirement">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="EffectuerVirement">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="EffectuerVirementResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListerComptesAgence">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="ListerComptesAgence">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="ListerComptesAgenceResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsulterCompte">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="ConsulterCompte">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="ConsulterCompteResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Saluer">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="Saluer">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="SaluerResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BanqueService">
+    <wsdl:port binding="tns:BanqueServiceSoapBinding" name="BanqueServicePort">
+      <soap:address location="http://localhost:9091/services/banque-secure"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

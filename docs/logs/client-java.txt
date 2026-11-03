@@ -1,0 +1,9 @@
+[main] INFO org.apache.cxf.wsdl.service.factory.ReflectionServiceFactoryBean - Creating Service {http://soap.ahmedbenidar.ma/banque/}BanqueService from WSDL: http://localhost:9091/services/banque?wsdl
+[main] INFO org.apache.cxf.wsdl.service.factory.ReflectionServiceFactoryBean - Creating Service {http://soap.ahmedbenidar.ma/banque/}BanqueService from WSDL: http://localhost:9091/services/banque?wsdl
+=== Client Java JAX-WS sur l'endpoint ouvert ===
+Saluer            : Bonjour Ahmed, bienvenue au service SOAP de la banque Ahmed Ben Idar.
+ConsulterCompte   : Compte{MA-1001, Yassine El Amrani, Agence Casablanca Anfa (Casablanca), 18540.75 MAD, actif=true}
+ListerComptesAgence (Rabat) : 2 compte(s)
+   -> Compte{MA-1003, Hicham Ouazzani, Agence Rabat Agdal (Rabat), 221150.4 MAD, actif=true}
+   -> Compte{MA-1004, Nadia Chraibi, Agence Rabat Agdal (Rabat), 5980.25 MAD, actif=false}
+EffectuerVirement : ResultatVirement{VIR-CD291EA5, EXECUTE, Virement execute avec succes, debite=1500.0, soldeDebit=219650.4, soldeCredit=8920.0}

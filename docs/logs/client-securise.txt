@@ -1,0 +1,23 @@
+=== 1. Endpoint PasswordText, bons identifiants ===
+[main] INFO org.apache.cxf.wsdl.service.factory.ReflectionServiceFactoryBean - Creating Service {http://soap.ahmedbenidar.ma/banque/}BanqueService from WSDL: http://localhost:9091/services/banque-secure?wsdl
+[main] INFO org.apache.cxf.wsdl.service.factory.ReflectionServiceFactoryBean - Creating Service {http://soap.ahmedbenidar.ma/banque/}BanqueService from WSDL: http://localhost:9091/services/banque-secure?wsdl
+Saluer          : Bonjour Ahmed, bienvenue au service SOAP de la banque Ahmed Ben Idar.
+ConsulterCompte : Compte{MA-1002, Salma Benjelloun, Agence Casablanca Anfa (Casablanca), 8920.0 MAD, actif=true}
+
+=== 2. Endpoint PasswordText, mauvais mot de passe ===
+[main] INFO org.apache.cxf.wsdl.service.factory.ReflectionServiceFactoryBean - Creating Service {http://soap.ahmedbenidar.ma/banque/}BanqueService from WSDL: http://localhost:9091/services/banque-secure?wsdl
+[main] INFO org.apache.cxf.wsdl.service.factory.ReflectionServiceFactoryBean - Creating Service {http://soap.ahmedbenidar.ma/banque/}BanqueService from WSDL: http://localhost:9091/services/banque-secure?wsdl
+Appel refuse comme prevu : SOAPFaultException
+Detail : A security error was encountered when verifying the message
+
+=== 3. Endpoint PasswordDigest, bons identifiants ===
+[main] INFO org.apache.cxf.wsdl.service.factory.ReflectionServiceFactoryBean - Creating Service {http://soap.ahmedbenidar.ma/banque/}BanqueService from WSDL: http://localhost:9091/services/banque-digest?wsdl
+[main] INFO org.apache.cxf.wsdl.service.factory.ReflectionServiceFactoryBean - Creating Service {http://soap.ahmedbenidar.ma/banque/}BanqueService from WSDL: http://localhost:9091/services/banque-digest?wsdl
+Saluer          : Bonjour Ahmed, bienvenue au service SOAP de la banque Ahmed Ben Idar.
+ConsulterCompte : Compte{MA-1002, Salma Benjelloun, Agence Casablanca Anfa (Casablanca), 8920.0 MAD, actif=true}
+
+=== 4. Endpoint PasswordDigest, utilisateur inconnu ===
+[main] INFO org.apache.cxf.wsdl.service.factory.ReflectionServiceFactoryBean - Creating Service {http://soap.ahmedbenidar.ma/banque/}BanqueService from WSDL: http://localhost:9091/services/banque-digest?wsdl
+[main] INFO org.apache.cxf.wsdl.service.factory.ReflectionServiceFactoryBean - Creating Service {http://soap.ahmedbenidar.ma/banque/}BanqueService from WSDL: http://localhost:9091/services/banque-digest?wsdl
+Appel refuse comme prevu : SOAPFaultException
+Detail : A security error was encountered when verifying the message

@@ -1,0 +1,32 @@
+﻿### Endpoint securise AVEC mauvais mot de passe
+POST http://localhost:9091/services/banque-secure
+Content-Type: text/xml; charset=UTF-8
+
+----- REQUETE SOAP ENVOYEE -----
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:ban="http://soap.ahmedbenidar.ma/banque/">
+  <soapenv:Header>
+  <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"
+                 xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+    <wsse:UsernameToken wsu:Id="UT-1">
+      <wsse:Username>ahmed</wsse:Username>
+      <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">mot-de-passe-errone</wsse:Password>
+    </wsse:UsernameToken>
+  </wsse:Security>
+</soapenv:Header>
+  <soapenv:Body>
+    <ban:Saluer>
+      <nomClient>Salma</nomClient>
+    </ban:Saluer>
+  </soapenv:Body>
+</soapenv:Envelope>
+
+----- REPONSE HTTP + SOAP -----
+HTTP/1.1 500 Server Error
+Date: Tue, 03 Nov 2026 21:05:48 GMT
+Content-Type: text/xml;charset=utf-8
+Content-Length: 299
+Server: Jetty(11.0.25)
+
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><soap:Body><soap:Fault><faultcode xmlns:ns1="http://ws.apache.org/wss4j">ns1:SecurityError</faultcode><faultstring>A security error was encountered when verifying the message</faultstring></soap:Fault></soap:Body></soap:Envelope>
